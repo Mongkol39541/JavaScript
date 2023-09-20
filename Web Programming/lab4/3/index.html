@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container-md my-5">
+        <div class="row p-3 justify-content-center">
+            <div class="col-3">
+                <div class="form-outline">
+                    <input type="number" id="id" class="form-control" />
+                    <label class="form-label" for="typeNumber">รหัสนักศึกษา</label>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-outline">
+                    <input type="text" id="fname" class="form-control" />
+                    <label class="form-label" for="typeText">ชื่อ</label>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-outline">
+                    <input type="text" id="lname" class="form-control" />
+                    <label class="form-label" for="typeText">นามสกุล</label>
+                </div>
+            </div>
+            <div class="col-2 d-flex justify-content-center">
+                <button class="btn btn-success" onclick="Summit()" id="summit">ลงทะเบียน</button>
+            </div>
+        </div>
+        <hr>
+        <div class="row p-3 text-center">
+            <table class="table align-middle">
+                <thead>
+                    <tr>
+                        <th scope="col">รหัสนักศึกษา</th>
+                        <th scope="col">ชื่อ</th>
+                        <th scope="col">นามสกุล</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody id="data">
+                    <tr id="row65070083">
+                        <th>65070083</th>
+                        <td>นายณัฐวัฒน์</td>
+                        <td>วีรเดชทวีวรรณ</td>
+                        <td>
+                            <button class="btn btn-danger" onclick="Delete('row65070083')">ลบข้อมูล</button>
+                        </td>
+                    </tr>
+                    <tr id="row65070156">
+                        <th>65070156</th>
+                        <td>นางสาวพิมพ์ดาว</td>
+                        <td>ขยันการ</td>
+                        <td>
+                            <button class="btn btn-danger" onclick="Delete('row65070156')">ลบข้อมูล</button>
+                        </td>
+                    </tr>
+                    <tr id="row65070043">
+                        <th>65070043</th>
+                        <td>นายชคัตบดี</td>
+                        <td>ชัยถาวรกิจ</td>
+                        <td>
+                            <button class="btn btn-danger" onclick="Delete('row65070043')">ลบข้อมูล</button>
+                        </td>
+                    </tr>
+                    <tr id="row65070186">
+                        <th>65070186</th>
+                        <td>นายมงคล</td>
+                        <td>บุญดำเนิน</td>
+                        <td>
+                            <button class="btn btn-danger" onclick="Delete('row65070186')">ลบข้อมูล</button>
+                        </td>
+                    </tr>
+                    <tr id="row65070244">
+                        <th>65070244</th>
+                        <td>นางสาวสุรัตณวดี</td>
+                        <td>บุญไล้</td>
+                        <td>
+                            <button class="btn btn-danger" onclick="Delete('row65070244')">ลบข้อมูล</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.js"></script>
+
+    <script>
+        function Summit() {
+            let id = document.getElementById('id').value;
+            let fname = document.getElementById('fname').value;
+            let lname = document.getElementById('lname').value;
+            let data = document.getElementById('data');
+            let trtag = document.createElement("tr");
+            let thtag_id = document.createElement("th");
+            let thtag_fname = document.createElement("th");
+            let thtag_lame = document.createElement("th");
+            let tdtag_delete = document.createElement("td");
+            let deleteButton = document.createElement("button");
+
+            deleteButton.textContent = "ลบข้อมูล";
+            deleteButton.className = "btn btn-danger";
+            trtag.id = "row" + id;
+            thtag_id.textContent = id;
+            thtag_fname.textContent = fname;
+            thtag_lame.textContent = lname;
+
+            trtag.appendChild(thtag_id);
+            trtag.appendChild(thtag_fname);
+            trtag.appendChild(thtag_lame);
+            trtag.appendChild(tdtag_delete);
+            tdtag_delete.appendChild(deleteButton);
+            data.appendChild(trtag);
+
+            deleteButton.onclick = function () {
+                Delete("row" + id);
+            };
+        };
+
+        function Delete(row) {
+            let roww = document.getElementById(row);
+            roww.remove();
+        };
+
+    </script>
+</body>
+
+</html>

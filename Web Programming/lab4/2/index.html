@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+
+<body class="bg-gradient-to-r from-purple-300 to-pink-200 min-h-screen flex items-center justify-center">
+    <div class="bg-white p-8 rounded-lg shadow-md">
+        <div class="flex items-center mb-4">
+            <h3 class="mr-2 p-3 text-gray-800" id="fname">ชื่อ:</h3>
+            <input type="number" id="input_num1"
+                class="border rounded px-2 py-1 p-3 focus:outline-none focus:border-purple-400">
+        </div>
+        <div class="flex items-center mb-4">
+            <h3 class="mr-2 p-3 text-gray-800" id="lastname">นามสกุล:</h3>
+            <input type="number" id="input_num2"
+                class="border rounded px-2 py-1 p-3 focus:outline-none focus:border-purple-400">
+        </div>
+        <div class="flex items-center mb-4">
+            <label class="mr-2 p-3 text-gray-800" id="label">ประเทศ:</label><select id="options" name="options"
+                class="block w-full mr-2 border rounded px-3 py-2 focus:outline-none focus:border-purple-400">
+                <option value="">เลือกประเทศ</option>
+                <option value="ไทย">ไทย</option>
+                <option value="เวียดนาม">เวียดนาม</option>
+                <option value="ลาว">ลาว</option>
+                <option value="มาเลย์เซีย">มาเลย์เซีย</option>
+                <option value="สิงคโปร์">สิงคโปร์</option>
+                <option value="ฟิลิปปินส์">ฟิลิปปินส์</option>
+                <option value="เมียร์มาร์">เมียร์มาร์</option>
+                <option value="กัมพูชา">กัมพูชา</option>
+                <option value="บรูไน">บรูไน</option>
+            </select>
+        </div>
+        <button type="button" onclick="TranformMesseng()" id="tranfrom"
+            class="bg-purple-500 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded">
+            เปลี่ยนเป็นภาษาอังกฤษ
+        </button>
+    </div>
+
+    <script>
+        function TranformMesseng() {
+            const fname = document.getElementById('fname');
+            const lastname = document.getElementById('lastname');
+            const label = document.getElementById('label');
+            const options = document.getElementById('options');
+            const tranfrom = document.getElementById('tranfrom');
+            const selectedValue = options.value;
+            if (tranfrom.textContent === 'Switch to English') {
+                fname.textContent = 'ชื่อ:';
+                lastname.textContent = 'นามสกุล:';
+                label.textContent = 'ประเทศ:';
+                options.innerHTML = `
+                    <option value="">เลือกประเทศ</option>
+                    <option value="ไทย">ไทย</option>
+                    <option value="เวียดนาม">เวียดนาม</option>
+                    <option value="ลาว">ลาว</option>
+                    <option value="มาเลย์เซีย">มาเลย์เซีย</option>
+                    <option value="สิงคโปร์">สิงคโปร์</option>
+                    <option value="ฟิลิปปินส์">ฟิลิปปินส์</option>
+                    <option value="เมียร์มาร์">เมียร์มาร์</option>
+                    <option value="กัมพูชา">กัมพูชา</option>
+                    <option value="บรูไน">บรูไน</option>
+                `
+                tranfrom.textContent = 'เปลี่ยนเป็นภาษาอังกฤษ';
+            } else {
+                fname.textContent = 'First Name:';
+                lastname.textContent = 'Last Name:';
+                label.textContent = 'Country:';
+                options.innerHTML = `
+                    <option value="">Select an option</option>
+                    <option value="Thai">Thai</option>
+                    <option value="Vietnam">Vietnam</option>
+                    <option value="Laos">Laos</option>
+                    <option value="Malaysia">Malaysia</option>
+                    <option value="Singapore">Singapore</option>
+                    <option value="Philippines">Philippines</option>
+                    <option value="Myanmar">Myanmar</option>
+                    <option value="Cambodia">Cambodia</option>
+                    <option value="Brunei">Brunei</option>
+                `
+                tranfrom.textContent = 'Switch to English';
+            }
+            options.value = selectedValue;
+        };
+    </script>
+</body>
+
+</html>

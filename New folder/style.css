@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.td_boder,
+th {
+    border: 1px solid #000;
+    text-align: center;
+}
+
+th {
+    font-size: 20px;
+}
+
+.td_noboder {
+    border: 1px solid #ffffff;
+    text-align: center;
+}
+
+.box-left {
+    padding: 100px;
+    width: 75%;
+    float: left;
+}
+
+.box-right {
+    padding: 100px;
+    width: 25%;
+    float: left;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+
+<body class="bg-gradient-to-r from-purple-300 to-pink-200 min-h-screen flex items-center justify-center">
+    <div class="bg-white p-8 rounded-lg shadow-md">
+        <div class="flex items-center mb-4">
+            <h3 class="mr-2 p-3 text-gray-800">Value 1:</h3>
+            <input type="number" id="input_num1"
+                class="border rounded px-2 py-1 p-3 focus:outline-none focus:border-purple-400">
+            <h3 class="mx-2 p-3 text-gray-800">Value 2:</h3>
+            <input type="number" id="input_num2"
+                class="border rounded px-2 py-1 p-3 focus:outline-none focus:border-purple-400">
+        </div>
+        <button type="button" onclick="calculateNumber()"
+            class="bg-purple-500 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded">
+            Calculate
+        </button>
+        <h3 class="my-5 flex items-center text-gray-800">
+            Result: <p id="ans" class="ml-2"></p>
+        </h3>
+        <div id="show" class="my-3"></div>
+    </div>
+
+    <script>
+        function calculateNumber() {
+            let input_num1 = document.getElementById("input_num1").value;
+            let input_num2 = document.getElementById("input_num2").value;
+            let show = document.getElementById("ans");
+            let ans = Number(input_num1) + Number(input_num2);
+            show.innerHTML = ans;
+
+            let ptag = document.createElement("h3");
+            input_num1 = Number(input_num1);
+            input_num2 = Number(input_num2);
+            ans = String(ans);
+            if (input_num1 >= 0 && input_num2 >= 0) {
+                let txt = document.createTextNode(`${String(input_num1)} + ${String(input_num2)} = ${ans}`);
+                ptag.appendChild(txt);
+            } else if (input_num1 < 0 && input_num2 >= 0) {
+                let txt = document.createTextNode(`(${String(input_num1)}) + ${String(input_num2)} = ${ans}`);
+                ptag.appendChild(txt);
+            } else if (input_num1 >= 0 && input_num2 < 0) {
+                let txt = document.createTextNode(`${String(input_num1)} - ${String((input_num2) * (-1))} = ${ans}`);
+                ptag.appendChild(txt);
+            } else {
+                let txt = document.createTextNode(`(${String(input_num1)}) + (${String(input_num2)}) = ${ans}`);
+                ptag.appendChild(txt);
+            }
+            let parent = document.getElementById("show");
+            parent.appendChild(ptag);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 3 ฟอร์มรายการกรอกข้อมูล</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-5 my-3">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title text-center my-3"><strong>ฟอร์มรายการกรอกข้อมูล</strong></h5>
+                        <br>
+                        <form id="idForm">
+                            <div class="mb-3">
+                                <label for="citizenId" class="form-label">เลขบัตรประชาชน:</label>
+                                <input type="text" class="form-control" id="citizenId" maxlength="17"
+                                    placeholder="กรอกเลขบัตรประชาชน">
+                            </div>
+                            <div class="mb-3">
+                                <label for="title" class="form-label">คำนำหน้าชื่อ:</label>
+                                <select class="form-control" aria-label=".form-select-lg example" id="title">
+                                    <option selected>คำนำหน้าชื่อ</option>
+                                    <option value="นาย">นาย</option>
+                                    <option value="นาง">นาง</option>
+                                    <option value="นางสาว">นางสาว</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="firstName" class="form-label">ชื่อ:</label>
+                                <input type="text" class="form-control" id="firstName" placeholder="กรอกชื่อ">
+                            </div>
+                            <div class="mb-3">
+                                <label for="lastName" class="form-label">นามสกุล:</label>
+                                <input type="text" class="form-control" id="lastName" placeholder="กรอกนามสกุล">
+                            </div>
+                            <div class="mb-3">
+                                <label for="address" class="form-label">ที่อยู่:</label>
+                                <textarea class="form-control" id="address" rows="3"
+                                    placeholder="กรอกที่อยู่"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="subdistrict" class="form-label">ตำบล/แขวง:</label>
+                                <input type="text" class="form-control" id="subdistrict" placeholder="กรอกตำบลหรือแขวง">
+                            </div>
+                            <div class="mb-3">
+                                <label for="district" class="form-label">อำเภอ/เขต:</label>
+                                <input type="text" class="form-control" id="district" placeholder="กรอกตำบลหรือแขวง">
+                            </div>
+                            <div class="mb-3">
+                                <label for="province" class="form-label">จังหวัด:</label>
+                                <select class="form-control" aria-label=".form-select-lg example" id="provinc">
+                                    <option class="text-center" value="" selected>--------- กรุณาเลือกจังหวัด ---------
+                                    </option>
+                                    <option value="กรุงเทพมหานคร">กรุงเทพมหานคร</option>
+                                    <option value="กระบี่">กระบี่</option>
+                                    <option value="กาญจนบุรี">กาญจนบุรี</option>
+                                    <option value="กาฬสินธุ์">กาฬสินธุ์</option>
+                                    <option value="กำแพงเพชร">กำแพงเพชร</option>
+                                    <option value="ขอนแก่น">ขอนแก่น</option>
+                                    <option value="จันทบุรี">จันทบุรี</option>
+                                    <option value="ฉะเชิงเทรา">ฉะเชิงเทรา</option>
+                                    <option value="ชลบุรี">ชลบุรี</option>
+                                    <option value="ชัยนาท">ชัยนาท</option>
+                                    <option value="ชัยภูมิ">ชัยภูมิ</option>
+                                    <option value="ชุมพร">ชุมพร</option>
+                                    <option value="เชียงราย">เชียงราย</option>
+                                    <option value="เชียงใหม่">เชียงใหม่</option>
+                                    <option value="ตรัง">ตรัง</option>
+                                    <option value="ตราด">ตราด</option>
+                                    <option value="ตาก">ตาก</option>
+                                    <option value="นครนายก">นครนายก</option>
+                                    <option value="นครปฐม">นครปฐม</option>
+                                    <option value="นครพนม">นครพนม</option>
+                                    <option value="นครราชสีมา">นครราชสีมา</option>
+                                    <option value="นครศรีธรรมราช">นครศรีธรรมราช</option>
+                                    <option value="นครสวรรค์">นครสวรรค์</option>
+                                    <option value="นนทบุรี">นนทบุรี</option>
+                                    <option value="นราธิวาส">นราธิวาส</option>
+                                    <option value="น่าน">น่าน</option>
+                                    <option value="บึงกาฬ">บึงกาฬ</option>
+                                    <option value="บุรีรัมย์">บุรีรัมย์</option>
+                                    <option value="ปทุมธานี">ปทุมธานี</option>
+                                    <option value="ประจวบคีรีขันธ์">ประจวบคีรีขันธ์</option>
+                                    <option value="ปราจีนบุรี">ปราจีนบุรี</option>
+                                    <option value="ปัตตานี">ปัตตานี</option>
+                                    <option value="พระนครศรีอยุธยา">พระนครศรีอยุธยา</option>
+                                    <option value="พังงา">พังงา</option>
+                                    <option value="พัทลุง">พัทลุง</option>
+                                    <option value="พิจิตร">พิจิตร</option>
+                                    <option value="พิษณุโลก">พิษณุโลก</option>
+                                    <option value="เพชรบุรี">เพชรบุรี</option>
+                                    <option value="เพชรบูรณ์">เพชรบูรณ์</option>
+                                    <option value="แพร่">แพร่</option>
+                                    <option value="พะเยา">พะเยา</option>
+                                    <option value="ภูเก็ต">ภูเก็ต</option>
+                                    <option value="มหาสารคาม">มหาสารคาม</option>
+                                    <option value="มุกดาหาร">มุกดาหาร</option>
+                                    <option value="แม่ฮ่องสอน">แม่ฮ่องสอน</option>
+                                    <option value="ยะลา">ยะลา</option>
+                                    <option value="ยโสธร">ยโสธร</option>
+                                    <option value="ระนอง">ระนอง</option>
+                                    <option value="ระยอง">ระยอง</option>
+                                    <option value="ราชบุรี">ราชบุรี</option>
+                                    <option value="ลพบุรี">ลพบุรี</option>
+                                    <option value="ลำปาง">ลำปาง</option>
+                                    <option value="ลำพูน">ลำพูน</option>
+                                    <option value="เลย">เลย</option>
+                                    <option value="ศรีสะเกษ">ศรีสะเกษ</option>
+                                    <option value="สกลนคร">สกลนคร</option>
+                                    <option value="สงขลา">สงขลา</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="zipcode" class="form-label">รหัสไปรษณีย์:</label>
+                                <input type="text" class="form-control" id="zipcode" maxlength="5"
+                                    placeholder="กรอกรหัสไปรษณีย์">
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <button type="submit" class="btn btn-primary">ตรวจสอบ</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title text-center my-3"><strong>ทำการตรวจสอบข้อมูล</strong></h5>
+                        <br>
+                        <p><strong>หมายเลขบัตรประชาชน:</strong> <span id="outputcitizenId">-</span></p>
+                        <p><strong>ชื่อ-นามสกุล:</strong> <span id="outputfullName">-</span></p>
+                        <p><strong> ที่อยู่:</strong> <span id="outputaddress">-</span></p>
+                        <p><strong> ตำบล/แขวง:</strong> <span id="outputsubdistrict">-</span></p>
+                        <p><strong> อำเภอ/เขต:</strong> <span id="outputdistrict">-</span></p>
+                        <p><strong> จังหวัด:</strong> <span id="outputprovinc">-</span></p>
+                        <p><strong> รหัสไปรษณีย์:</strong> <span id="outputzipcode">-</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="cheindex.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
