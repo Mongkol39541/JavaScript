@@ -47,8 +47,8 @@
 
             <?php
                 $servername = "localhost";
-                $username = "S186SPCX";
-                $password = "1629PJJ326";
+                $username = "root";
+                $password = "";
                 $dbname = "S186SPCX";
                 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
