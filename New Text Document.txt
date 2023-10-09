@@ -1,0 +1,11 @@
+Alias /lab/ "C:/Users/ASUS/Desktop/GitHub/JavaScript/Web Programming/"
+    <Directory "C:/Users/ASUS/Desktop/GitHub/JavaScript/Web Programming/">
+    Options Indexes FollowSymLinks 
+    Require all granted
+</Directory>
+
+Alias /HTDS/ "C:/Users/ASUS/Desktop/GitHub/Hotel Data Science/"
+    <Directory "C:/Users/ASUS/Desktop/GitHub/Hotel Data Science/">
+    Options Indexes FollowSymLinks 
+    Require all granted
+</Directory>
