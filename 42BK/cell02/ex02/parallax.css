@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.section1 {
+    background-image: url('https://img.freepik.com/free-photo/cyberpunk-urban-scenery_23-2150712616.jpg?t=st=1699937706~exp=1699941306~hmac=41fa2fefd866b3a08d54a005db5eb00a2d0e62e18f27eaebbd411613b1e39da8&w=1380');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+}
+
+.section2 {
+    background-color: black;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+}
+
+.section3 {
+    background-image: url('https://img.freepik.com/free-vector/gradient-japanese-temple-with-sun_52683-44985.jpg?w=1060&t=st=1699937753~exp=1699938353~hmac=97c0f168a4a1f11e06229895ed147b4643935302609261b738b7069a736f3d25');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+}

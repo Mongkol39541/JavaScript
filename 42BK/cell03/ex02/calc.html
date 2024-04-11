@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Calculator</title>
+    <style>
+        .calculator {
+            width: 300px;
+            margin: 50px auto;
+            text-align: center;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .calculator input,
+        .calculator select {
+            margin: 5px;
+        }
+
+
+        input {
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calculator">
+        <input type="text" id="leftOperand" placeholder="Left Operand">
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        <input type="text" id="rightOperand" placeholder="Right Operand">
+        <input type="button" value="Try me!" onclick="calculate()">
+    </div>
+    <script>
+        function calculate() {
+            var leftOperand = parseInt(document.getElementById('leftOperand').value);
+            var operator = document.getElementById('operator').value;
+            var rightOperand = parseInt(document.getElementById('rightOperand').value);
+            if (isNaN(leftOperand) || isNaN(rightOperand) || leftOperand < 0 || rightOperand < 0) {
+                alert('Error: Invalid input. Please enter positive integers.');
+                return;
+            }
+
+            var result;
+            switch (operator) {
+                case '+':
+                    result = leftOperand + rightOperand;
+                    break;
+                case '-':
+                    result = leftOperand - rightOperand;
+                    break;
+                case '*':
+                    result = leftOperand * rightOperand;
+                    break;
+                case '/':
+                    if (rightOperand === 0) {
+                        alert("It's over 9000!");
+                        console.log("It's over 9000!");
+                        return;
+                    }
+                    result = leftOperand / rightOperand;
+                    break;
+                case '%':
+                    if (rightOperand === 0) {
+                        alert("It's over 9000!");
+                        console.log("It's over 9000!");
+                        return;
+                    }
+                    result = leftOperand % rightOperand;
+                    break;
+                default:
+                    alert('Error: Invalid operator.');
+                    return;
+            }
+
+            alert('Result: ' + result);
+            console.log('Result:', result);
+        }
+
+        setInterval(function () {
+            alert('Please, use me...');
+        }, 30000);
+
+    </script>
+</body>
+
+</html>
